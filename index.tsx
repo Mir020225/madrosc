@@ -1,13 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { AppProvider } from './contexts/AppContext';
-import { ThemeProvider } from './contexts/ThemeContext';
-import { ToastProvider } from './contexts/ToastContext';
+// index.tsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css"; // keep if you have index.css at repo root (create it if not)
+import App from "./App";
+import { AppProvider } from "./AppContext";
+import { ThemeProvider } from "./ThemeContext";
+import { ToastProvider } from "./ToastContext";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+// ensure a root element exists (safe for different index.html setups)
+const container =
+  document.getElementById("root") ||
+  document.body.appendChild(document.createElement("div"));
+container.id = "root";
+
+const root = ReactDOM.createRoot(container as HTMLElement);
 
 root.render(
   <React.StrictMode>
