@@ -42,6 +42,25 @@ export interface Task {
   completed: boolean;
 }
 
+export interface Goal {
+  id: string;
+  customerId: string;
+  title: string;
+  targetAmount: number;
+  currentAmount: number; // This will be calculated from sales
+  deadline: string; // ISO string
+  status: 'InProgress' | 'Achieved' | 'Missed';
+}
+
+export interface Milestone {
+  id: string;
+  goalId: string;
+  description: string;
+  targetDate: string; // ISO string
+  completed: boolean;
+}
+
+
 export interface CustomerFormData {
   name: string;
   contact: string;
