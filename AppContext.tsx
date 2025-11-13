@@ -1,6 +1,6 @@
 // contexts/AppContext.tsx
 import React, { createContext, useContext, ReactNode, useState } from 'react';
-import { useCrmData } from '../hooks/useCrmData';
+import { useCrmData } from './hooks/useCrmData';
 import { Customer } from '../types';
 
 // The return type of useCrmData
